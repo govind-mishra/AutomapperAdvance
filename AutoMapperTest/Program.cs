@@ -31,7 +31,8 @@ namespace AutoMapperTest
              //Step3: use the mapper to map the source and destination object
              var empDTO = Mapper.Map<Employee, EmployeeDTO>(emp);
              Console.WriteLine(empDTO.FullName); */
-
+             
+            //mapping of destination children property to source property
             Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<ItemInventoryDomainModel, CsvItemProductDomainModel>()
