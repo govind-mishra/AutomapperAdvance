@@ -28,9 +28,25 @@ namespace AutoMapperTest
         /// <summary>
         /// Weight in grams
         /// </summary>
-       
-     
-      
+
+        public string WeightUnit { get; set; }
+
+        /// <summary>
+        /// SPIN Number
+        /// </summary>
+        public string SPINNumber { get; set; }
+
+        /// <summary>
+        /// Misc Bar code
+        /// </summary>
+        public string MiscBarcode { get; set; }
+
+        /// <summary>
+        /// Is material hazardous
+        /// </summary>
+        public bool? IsHazMat { get; set; }
+
+
         public int BundledItemFlag { get; set; }
 
         /// <summary>

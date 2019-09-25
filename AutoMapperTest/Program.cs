@@ -40,11 +40,11 @@ namespace AutoMapperTest
                 .ForMember(dest => dest.CategoryName, act => act.MapFrom(src => src.ItemCategoryName))
                 .ForMember(dest => dest.ItemId, act => act.MapFrom(src => src.ItemId ))
                 .ForMember(dest => dest.CsvBundledItemDetails, act => act.MapFrom(src => src.BundledItemDetails))
-                .AfterMap((s, d) =>
+                .AfterMap((source, destination) =>
                 {
-                     foreach(var child in d.CsvBundledItemDetails)
+                     foreach(var destinationchild in destination.CsvBundledItemDetails)
                     {
-                        child.ItemId = s.ItemId;
+                        destinationchild.ItemId = source.ItemId;
                     }
                 })
                 .ForAllOtherMembers(x => x.Ignore());
